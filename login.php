@@ -13,16 +13,12 @@ if (isset($_POST['loginBtn'])) {
     $filename = "users.txt";
     $handle =  file_get_contents($filename); //read file and return as a string
 
-    // echo $handle . "</br>"; //print as string
-    $content = explode("\n", $handle); //when meet new line split into array
+    $content = explode("\n", $handle);
 
-    // print_r($content); //print in array
+    $data = array(); //array map
 
-    $data = array();
     foreach ($content as $values) {
         $userInfo = array_map('trim', explode("|", $values));
-
-        // print_r ($userInfo) . "</br>";
 
         if (!isset($userInfo[1])) {
             $userInfo[1] = null;
@@ -34,7 +30,7 @@ if (isset($_POST['loginBtn'])) {
             // echo "OKAY </br>";
             session_start();
             $_SESSION['$username'] = $uname;
-            header('Location: index.php');
+            header('Location: index.php'); //go to secured page
             break;
         }
     }
@@ -51,6 +47,7 @@ if (isset($_POST['loginBtn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
