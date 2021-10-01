@@ -44,29 +44,8 @@ if ($result->num_rows > 0) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-    <script>
-    </script>
-
-    <style>
-        body {
-            margin-top: 20px;
-            /* padding-top: 50px; */
-        }
-
-        .second-header {
-            padding-top: 20px;
-            padding-left: 30px;
-        }
-
-        .sales {
-            padding: 20px;
-            background-color: whitesmoke;
-        }
-
-        table {
-            width: 50%;
-        }
-    </style>
+    <!-- CSS-->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
